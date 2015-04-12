@@ -13,173 +13,67 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-  <title>Products</title>
+  <title>Products Plugview</title>
 </head>
 <body data-ng-controller="StoreListCtrl" data-ng-init="init()" style="overflow: hidden;">
-<div class="whole_container">
-  
-  <div id="Search_container">
-  <nav>
-    <ul>
-      <li class="view_select_Sort">
-        Sort
-        <img class="view_select_icon" src="img/view.png"/>
-        <ul>
-          <li class="view_option fadeIn fadeIn-20ms">By Time</li>
-          <li class="view_option fadeIn fadeIn-20ms fadeIn-Delay-10ms">By Price</li>
-          <li class="view_option fadeIn fadeIn-20ms fadeIn-Delay-20ms">By Sale</li>
-        </ul>
-      </li>
-      <li class="view_select_View">
-        View
-        <img class="view_select_icon" src="img/view.png"/>
-        <ul>
-          <li class="view_option fadeIn fadeIn-20ms" ng-click="LargeCards()">Large</li>
-          <li class="view_option fadeIn fadeIn-20ms fadeIn-Delay-10ms" ng-click="MediumCards()">Medium</li>
-          <li class="view_option fadeIn fadeIn-20ms fadeIn-Delay-20ms" ng-click="SmallCards()">Small</li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  <input class="search_bar_input" placeholder="Search products ..." ng-model="query" ng-keydown="selectSearch($event)"></input>
-  <div class="search_bar_bn">Search</div>
-  </div>
 
-  <!-- This is main page -->
-  <div id="list_container" hidden>
-
-    <!-- This is category Bar -->
-    <div class="category_container">
-      <div class="category_unit category_unit_selected">All</div>
-      <div class="category_unit">+</div>
-    </div>
-
-    <!-- These are all Product Cards -->
-    <div ng-repeat="product in products | orderBy:'id'">
-      <div ng-class="{
-        'product_unit_large_cards': LargeCards_flag===true, 
-        'product_unit_medium_cards': MediumCards_flag===true,
-        'product_unit_small_cards': SmallCards_flag===true
-        }">
+    <!-- These are Product Card -->
+    <div ng-repeat="product in products">
+      <div class="product_unit">
         <img class="banding_shadow" src="img/shadow.png"/>
         <div class="product_edge" 
           ng-mouseover="product.selected=true;" 
-          ng-mouseleave="product.selected=false; product.edit=false; product.camera=false; product.vendor=false; product.packaging=false; product.add_link=false; product.hide_switch=false;" 
+          ng-mouseleave="product.selected=false; product.edit=false; product.camera=false; product.vendor=false; product.packaging=false;" 
           ng-init="product.selected=false;">
-          <div ng-class="{
-            'product_content_large_cards': LargeCards_flag===true, 
-            'product_content_medium_cards': MediumCards_flag===true, 
-            'product_content_small_cards': SmallCards_flag===true
-            }">
+          <div class="product_content">
             <img class="product_main_pic" src="{{product.pic}}"/>
             <div class="product_hover_container fadeIn fadeIn-100ms" ng-show="product.enable=='true'">
-              <img ng-class="{
-                'app_icon_large': LargeCards_flag===true, 
-                'app_icon_medium': MediumCards_flag===true, 
-                'app_icon_small': SmallCards_flag===true
-                }"
+              <img class="app_icon"
                 src="img/edit.png"
                 ng-mouseover="product.edit=true; product.camera=false; product.vendor=false; product.packaging=false; product.add_link=false; product.hide_switch=true;" 
                 ng-init="product.edit=false;" 
                 ng-click="full_edit()"/>
-              <img ng-class="{
-                'app_icon_large': LargeCards_flag===true, 
-                'app_icon_medium': MediumCards_flag===true, 
-                'app_icon_small': SmallCards_flag===true
-                }"
+              <img class="app_icon"
                 src="img/camera.png"                
                 ng-mouseover="product.edit=false; product.camera=true; product.vendor=false; product.packaging=false; product.add_link=false; product.hide_switch=true;" 
                 ng-init="product.camera=false;" />
-              <img ng-class="{
-                'app_icon_large': LargeCards_flag===true, 
-                'app_icon_medium': MediumCards_flag===true, 
-                'app_icon_small': SmallCards_flag===true
-                }"
+              <img class="app_icon"
                 src="img/vendor.png"                
                 ng-mouseover="product.edit=false; product.camera=false; product.vendor=true; product.packaging=false; product.add_link=false; product.hide_switch=true;" 
                 ng-init="product.vendor=false;" />
-              <img ng-class="{
-                'app_icon_large': LargeCards_flag===true, 
-                'app_icon_medium': MediumCards_flag===true, 
-                'app_icon_small': SmallCards_flag===true
-                }"
+              <img class="app_icon"
                 src="img/package.png"                
                 ng-mouseover="product.edit=false; product.camera=false; product.vendor=false; product.packaging=true; product.add_link=false; product.hide_switch=true;" 
                 ng-init="product.packaging=false;" />
-              <img ng-class="{
-                'app_icon_large': LargeCards_flag===true, 
-                'app_icon_medium': MediumCards_flag===true, 
-                'app_icon_small': SmallCards_flag===true
-                }"
-                src="img/add_link.png"                
-                ng-mouseover="product.edit=false; product.camera=false; product.vendor=false; product.packaging=false; product.add_link=true; product.hide_switch=false;" 
-                ng-init="product.add_link=false;" />
             </div>
             <img ng-class="{
               'product_disabled_overlay': product.enable==='false',
               'product_no_overlay': product.enable==='true'
               }" src="img/out_of_order_2.png"/>
-            <img ng-class="{
-              'product_trash_overlay': product.enable==='false',
-              'product_no_trash': product.enable==='true'
-              }" src="img/delete.png"/>
-            <div ng-class="{
-              'product_name_container_large_cards': LargeCards_flag===true, 
-              'product_name_container_medium_cards': MediumCards_flag===true,
-              'product_name_container_small_cards': SmallCards_flag===true
-              }">
+            <div class="product_name_container">
               {{product.name}}
             </div>
-            <div ng-class="{
-              'product_price_large': LargeCards_flag===true, 
-              'product_price_medium': MediumCards_flag===true,
-              'product_price_small': SmallCards_flag===true,
-              'fadeIn': true,
-              'fadeIn-100ms': true}" 
+            <div class="product_price" 
               ng-show="product.enable=='true'">
               {{product.pricing | currency}}
             </div>
-            <div ng-class="{
-              'product_discount_large': LargeCards_flag===true, 
-              'product_discount_medium': MediumCards_flag===true,
-              'product_discount_small': SmallCards_flag===true,
-              'fadeIn': true,
-              'fadeIn-100ms': true}" 
+            <div class="product_discount" 
               ng-show="product.enable=='true'">
               {{product.discount}}
-            </div>
-            <div ng-class="{
-              'product_in_stock_large': LargeCards_flag===true, 
-              'product_in_stock_medium': MediumCards_flag===true,
-              'product_in_stock_small': SmallCards_flag===true}" 
-              ng-show="product.enable=='true'">{{product.to_ship}} to ship, {{product.left}} left</div> 
-            <div ng-class="{
-                  'switch_container': product.enable==='true', 
-                  'switch_container_disable': product.enable==='false'}"
-                  ng-hide="product.hide_switch==true"
-                  ng-click="enableToggle(product)">
-              <div ng-class="{
-                  'switch_round': product.enable==='true', 
-                  'switch_round_disable': product.enable==='false'}">
-              </div>
             </div>
 
             <!-- These are icon plug-ins container -->
             <div class="icon_showup_container">
               <div class="edit_hover_content" ng-show="product.selected==true && product.edit==true">
-                <img class="icon_showup_container_expand" src="img/expand.png" ng-click="full_edit()">
                 <div class="hover_content_title">Product Info</div>
               </div> 
               <div class="camera_hover_content" ng-show="product.selected==true && product.camera==true">
-                <img class="icon_showup_container_expand" src="img/expand.png" ng-click="full_camera()">
                 <div class="hover_content_title">Product Gallery</div>
               </div> 
               <div class="vendor_hover_content" ng-show="product.selected==true && product.vendor==true">
-                <img class="icon_showup_container_expand" src="img/expand.png" ng-click="full_vendor()">
                 <div class="hover_content_title">Product Vendor</div>
               </div> 
               <div class="packaging_hover_content" ng-show="product.selected==true && product.packaging==true">
-                <img class="icon_showup_container_expand" src="img/expand.png" ng-click="full_packaging()">
                 <div class="hover_content_title">Product Packaging</div>
               </div>
             </div>
@@ -187,62 +81,6 @@
         </div>
       </div>
     </div>
-
-
-    <!-- This is to add a new product -->
-    <div ng-class="{
-      'product_unit_large_cards_new': LargeCards_flag===true, 
-      'product_unit_medium_cards_new': MediumCards_flag===true,
-      'product_unit_small_cards_new': SmallCards_flag===true
-      }">
-      <img class="banding_shadow" src="img/shadow.png"/>
-      <div class="product_edge">
-        <div ng-class="{
-          'product_content_large_cards': LargeCards_flag===true, 
-          'product_content_medium_cards': MediumCards_flag===true, 
-          'product_content_small_cards': SmallCards_flag===true
-          }">
-          <img class="add_new_product_img" src="img/add_new_product_img.png">
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- This is full screened product -->
-  <div id="full_screen_overlay" hidden>
-      <div class="full_screen_product">
-        <img class="close_full_screen" src="img/close_full_screen.png" ng-click="close_full_screen()"/>
-        <div class="product_edge">
-          <div class="product_content_large_cards">
-            <div class="full_screen_icon_container">
-              <img class="app_icon_large" src="img/edit.png" ng-mouseover="switch_to_edit()"/>
-              <img class="app_icon_large" src="img/camera.png" ng-mouseover="switch_to_camera()"/>
-              <img class="app_icon_large" src="img/vendor.png" ng-mouseover="switch_to_vendor()"/>
-              <img class="app_icon_large" src="img/package.png" ng-mouseover="switch_to_packaging()"/>
-              <img class="app_icon_large" src="img/add_link.png"/>
-            </div>
-
-            <!-- These are icon plug-ins container -->
-            <div class="icon_showup_container">
-              <div class="edit_hover_content" ng-show="full_screen_edit==true">
-                <div class="hover_content_title">Product Info</div>
-              </div> 
-              <div class="camera_hover_content" ng-show="full_screen_camera==true">
-                <div class="hover_content_title">Product Gallery</div>
-              </div> 
-              <div class="vendor_hover_content" ng-show="full_screen_vendor==true">
-                <div class="hover_content_title">Product Vendor</div>
-              </div> 
-              <div class="packaging_hover_content" ng-show="full_screen_packaging==true">
-                <div class="hover_content_title">Product Packaging</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-
 
   <script src="jquery-1.11.2.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -252,6 +90,5 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
-</div>
 </body>
 </html>
