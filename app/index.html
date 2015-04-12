@@ -53,13 +53,15 @@
             <div class="product_name_container">
               {{product.name}}
             </div>
-            <div class="product_price" 
-              ng-show="product.enable=='true'">
-              {{product.pricing | currency}}
-            </div>
-            <div class="product_discount" 
-              ng-show="product.enable=='true'">
-              {{product.discount}}
+            <div class="price_discount_container">
+              <div class="product_price" 
+                ng-show="product.enable=='true'">
+                {{product.pricing | currency}}
+              </div>
+              <div class="product_discount" 
+                ng-show="product.enable=='true'">
+                {{product.discount}}
+              </div>
             </div>
 
             <!-- These are icon plug-ins container -->
