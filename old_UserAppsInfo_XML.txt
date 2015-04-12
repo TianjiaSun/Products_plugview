@@ -1,0 +1,191 @@
+    <?xml version="1.0" encoding="UTF-8"?>
+
+<table>
+
+<row>
+	<id>1</id>
+	<name>ASA</name>
+        <brief>APP-Serve-APP API</brief>
+	<path>http://tianjiasun.github.io/ASA_api/app/index.html</path>
+        <icon>http://asa.static.gausian.com/user_app/ASA/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/ASA/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>true</certified>
+</row>
+
+<row>
+	<id>2</id>
+	<name>Map</name>
+        <brief>Google Map</brief>
+	<path>https://www.google.com/maps/embed/v1/place?key=AIzaSyBrTaOSXSiXT1o7mUCjnJZSeRcSz0vnglw</path>
+        <icon>http://asa.static.gausian.com/user_app/Map/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Map/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>3</id>
+	<name>Customers</name>
+        <brief>Management Customer Information</brief>
+	<path>http://gausian-developers.github.io/user-app-template5/app/</path>
+        <icon>http://asa.static.gausian.com/user_app/Customers/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Customers/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>true</certified>
+</row>
+
+<row>
+	<id>4</id>
+	<name>Quotes</name>
+        <brief>Handle All Quotes to Products</brief>
+	<path>http://gausian-developers.github.io/user-app-template5/app/</path>
+        <icon>http://asa.static.gausian.com/user_app/Quotes/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Customers/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>true</certified>
+</row>
+
+<row>
+	<id>5</id>
+	<name>HipChat</name>
+        <brief>Collaborate Your Team</brief>
+	<path>https://gausian.hipchat.com/chat</path>
+        <icon>http://asa.static.gausian.com/user_app/HipChat/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/HipChat/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>6</id>
+	<name>Pixlr</name>
+        <brief>Fast Drawing Tool</brief>
+	<path>http://pixlr.com/editor/?loc=zh-cn</path>
+        <icon>http://asa.static.gausian.com/user_app/Pixlr/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Pixlr/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>7</id>
+	<name>TakaBreak</name>
+        <brief>Music Player</brief>
+	<path>http://www.earbits.com/</path>
+        <icon>http://asa.static.gausian.com/user_app/TakaBreak/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/TakaBreak/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>8</id>
+	<name>EasyInvoice</name>
+        <brief>Quickly Generate a Invoice</brief>
+	<path>http://invoiceto.me/</path>
+        <icon>http://asa.static.gausian.com/user_app/EasyInvoice/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/EasyInvoice/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>9</id>
+	<name>LiveCAM</name>
+        <brief>Your Remote Camera</brief>
+	<path>http://trafficcam.santaclaraca.gov/TrafficCamera.aspx?CID=GA101</path>
+        <icon>http://asa.static.gausian.com/user_app/LiveCAM/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/LiveCAM/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>10</id>
+	<name>Math</name>
+        <brief>Mathematics Tool</brief>
+	<path>https://www.mathway.com/graph</path>
+        <icon>http://asa.static.gausian.com/user_app/Math/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Math/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>11</id>
+	<name>Withholding</name>
+        <brief>IRS Tool for Withholding</brief>
+	<path>http://apps.irs.gov/app/withholdingcalculator/</path>
+        <icon>http://asa.static.gausian.com/user_app/Withholding/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Withholding/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>12</id>
+	<name>JSON</name>
+        <brief>JSON Format Viewer</brief>
+	<path>http://jsonviewer.stack.hu/</path>
+        <icon>http://asa.static.gausian.com/user_app/JSON/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/JSON/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>13</id>
+	<name>Weather</name>
+        <brief>Weather Tools</brief>
+	<path>http://chrome.wunderground.com/auto/chrome/geo/wx/index.html?query=95054</path>
+        <icon>http://asa.static.gausian.com/user_app/Weather/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Weather/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>15</id>
+	<name>Canvas</name>
+        <brief>A Creative Drawing Tool</brief>
+	<path>http://www.ratemydrawings.com/canvasdraw/</path>
+        <icon>http://asa.static.gausian.com/user_app/Draw/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Draw/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>16</id>
+	<name>3D</name>
+        <brief>Professional 3D Modeling</brief>
+	<path>http://www.3dtin.com/2cwe</path>
+        <icon>http://asa.static.gausian.com/user_app/3D/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/3D/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>17</id>
+	<name>Developer</name>
+        <brief>GAUSIAN Developers Guide</brief>
+	<path>http://tianjiasun.github.io/ASA_website/</path>
+        <icon>http://asa.static.gausian.com/user_app/Developer/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/Developer/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+
+<row>
+	<id>18</id>
+	<name>SimpleDo</name>
+        <brief>GAUSIAN Developers Guide</brief>
+	<path>http://scrumy.com/husks11rubbish</path>
+        <icon>http://asa.static.gausian.com/user_app/SimpleToDo/icon.png</icon>
+        <ad>http://asa.static.gausian.com/user_app/SimpleToDo/ad.png</ad>
+	<pricing>FREE</pricing>
+	<certified>false</certified>
+</row>
+</table>  
