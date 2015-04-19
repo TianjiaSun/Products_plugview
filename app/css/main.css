@@ -1,6 +1,7 @@
 body {
   overflow: hidden;
   background: transparent;
+  background-color: transparent;
 }
 
 .product_unit {
@@ -10,8 +11,8 @@ body {
   float: left;
   width: 90%;
   height: 90%;
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 180px;
+  min-height: 180px;
   max-width: 400px;
   max-height: 400px;
   -webkit-transition: 0.3s ease-in-out;
